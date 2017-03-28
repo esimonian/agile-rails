@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Depot</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Pragprog Books Online Store</title>
+  <%= stylesheet_link_tag    "application", media: "all",
+    "data-turbolinks-track" => 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <%= javascript_include_tag "application", "data-turbolinks-track" => 'reload' %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= controller.controller_name %>">
+<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo"><%= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf', :class => 'responsive-img' %></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+        <li><a href="http://www..../faq">Questions</a></li>
+        <li><a href="http://www..../news">News</a></li>
+        <li><a href="http://www..../contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body class="<%= controller.controller_name%>">
-    <%= yield %>
-  </body>
+  <div class="container">
+   
+      <%= yield %>
+  </div>
+</body>
 </html>
