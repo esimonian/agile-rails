@@ -11,7 +11,8 @@
 <body class="<%= controller.controller_name %>">
 <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo"><%= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf', :class => 'responsive-img' %></a>
+      <%= link_to(image_tag('logo.svg', alt: 'The Pragmatic Bookshelf', :class => 'brand-logo responsive-img'), store_index_url) %>
+ 
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="/">Home</a></li>
         <li><a href="http://www..../faq">Questions</a></li>

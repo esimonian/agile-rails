@@ -13,10 +13,17 @@
  *= require_tree .
  *= require_self
  */
-
+@import "materialize/components/color";
+$primary-color: color("green", "darken-4") !default;
+$secondary-color: color("yellow", "base") !default;
+$link-color: color("green", "darken-4") !default;
 @import "materialize";
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+a:hover {
+  color: #81c784;
 }
