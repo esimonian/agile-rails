@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1 class="center-align">Your Pragmatic Catalog</h1>
-
+<p> <%= pluralize(@session_count, 'view' )%></p>
 <div class="row">
 <% cache @products do %>
   <% @products.each do |product| %>
@@ -16,7 +16,7 @@
 
             <div class="card-content">
             <span class="card-title center-align"><%= link_to product.title, product %></span>
-              
+              <%= button_to 'Add to Cart', line_items_path(product_id: product), class: 'waves-effect waves-light btn green darken-4 center' %>
             </div>
 
             <div class="card-action">
