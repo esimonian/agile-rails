@@ -2,11 +2,40 @@
 
 <h2>Your Cart</h2>
 
-<ul>
+<div class="row green lighten-4 ">
+  <div class="col m6">Item</div>
+  <div class="col m2">Quantity</div>
+  <div class="col m2">Price</div>
+  <div class="col m2">Total</div>
+</div>
+
+
   <% @cart.line_items.each do |item| %>
-      <li><%= item.product.title %></li>
+  <div class="row valign-wrapper">
+    <div class="col m6 valign-wrapper">
+      <%= image_tag(item.product.image_url, class: 'responsive-img activator') %>
+      
+      <div class="valign center col s12"><%= item.product.title %>
+      </div>
+      
+      </div>
+    <div class="col m2"><%= item.quantity %> </div>
+    <div class="col m2"><%= number_to_currency(item.price) %> </div>
+    <div class="col m2"><%= number_to_currency(item.total_price) %> </div>
+  </div>
   <% end %>
-</ul>
+
+  <div class="row">
+    <div class="col m2 push-m8">
+      Subtotal:
+    </div>
+    <div class="col m2 push-m8">
+      <%= number_to_currency(@cart.total_price) %>
+    </div>
+  </div>
+
+
+<%= button_to 'Empty Cart', @cart, method: :delete, class: 'waves-effect waves-light btn green darken-4 center' %>
 
 <%= link_to 'Edit', edit_cart_path(@cart) %> |
 <%= link_to 'Back', carts_path %>
