@@ -19,6 +19,10 @@ $secondary-color: color("yellow", "base") !default;
 $link-color: color("green", "darken-4") !default;
 @import "materialize";
 
+
+nav a, {
+  color: white;
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;

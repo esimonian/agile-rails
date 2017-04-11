@@ -1,0 +1,15 @@
+<div class="row valign-wrapper">
+  <div class="col m6 valign-wrapper">
+ <%= button_to line_item, method: :delete, class: 'btn-floating btn-medium waves-effect waves-light red' do %>
+  <i class="material-icons">delete</i>
+ <% end %>
+    <%= image_tag(line_item.product.image_url, class: 'responsive-img activator') %>
+    
+    <div class="valign center col s12"><%= line_item.product.title %>
+    </div>
+    
+    </div>
+  <div class="col s12 m2"><%= line_item.quantity %> </div>
+  <div class="col s12 m2"><%= number_to_currency(line_item.price) %> </div>
+  <div class="col s12 m2"><%= number_to_currency(line_item.total_price) %> </div>
+</div>
