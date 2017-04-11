@@ -18,7 +18,7 @@
 
             <div class="card-content">
             <span class="card-title center-align"><%= link_to product.title, product %></span>
-              <%= button_to 'Add to Cart', line_items_path(product_id: product), class: 'waves-effect waves-light btn green darken-4 center' %>
+              <%= button_to 'Add to Cart', line_items_path(product_id: product), class: 'waves-effect waves-light btn green darken-4 center', remote: true %>
             </div>
 
             <div class="card-action">

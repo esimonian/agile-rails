@@ -4,4 +4,6 @@
 
 
 $(document).on 'ready page:load', ->
-  $(".button-collapse").sideNav();
+  $("#slid-cart").sideNav({edge: 'right'});
+  $("#slid-menu").sideNav();
+ 
