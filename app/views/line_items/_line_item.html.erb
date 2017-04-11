@@ -3,7 +3,8 @@
  <%= button_to line_item, method: :delete, class: 'left btn-floating btn-large waves-effect waves-light red' do %>
   <i class="material-icons">delete</i>
  <% end %>
-    <%= image_tag(line_item.product.image_url, class: 'responsive-img activator') %>
+    <%#= image_tag(line_item.product.image_url, class: 'responsive-img activator') %>
+
     
     <div class="center col s12"><%= line_item.product.title %>
     </div>

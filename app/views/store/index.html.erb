@@ -11,14 +11,16 @@
       <div class="col s12 m6 xl3">
         <div class="card large">
           <div class="card-image">
-            <%= image_tag(product.image_url, class: 'responsive-img activator') %>
+            <img src="<%= product.image_url %>" alt="" class='responsive-img activator'>
+          
             
           </div>
 
 
-            <div class="card-content">
-            <span class="card-title center-align"><%= link_to product.title, product %></span>
-              <%= button_to 'Add to Cart', line_items_path(product_id: product), class: 'waves-effect waves-light btn green darken-4 center', remote: true %>
+            <div class="card-content center">
+            <span class=" card-title center-align"><%= link_to product.title, product %></span>
+
+              <%= button_to 'Add to Cart', line_items_path(product_id: product), class: 'waves-effect waves-light btn green darken-4 ', remote: true %>
             </div>
 
             <div class="card-action">
@@ -26,7 +28,7 @@
             </div>
 
             <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+          <span class="card-title grey-text text-darken-4"><%= product.title %><i class="material-icons right">close</i></span>
          <p><%= sanitize(product.description) %></p>
         </div>
        
