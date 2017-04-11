@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1 class="center-align">Your Pragmatic Catalog</h1>
-<% if @session_count < 5 %>
+<% if @session_count.to_i < 5 %>
   <p> <%= pluralize(@session_count, 'view' )%></p>
 <% end %>
 <div class="row">
