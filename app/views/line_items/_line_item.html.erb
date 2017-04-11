@@ -1,16 +1,19 @@
 <div class="row green-text">
-  <div class="col s12 center">
- <%= button_to line_item, method: :delete, class: 'left btn-floating btn-large waves-effect waves-light red' do %>
-  <i class="material-icons">delete</i>
- <% end %>
-    <%#= image_tag(line_item.product.image_url, class: 'responsive-img activator') %>
+  <div class="col s4">
+    <img src="<%= line_item.product.image_url %>" alt="" class='responsive-img activator'>
+  </div>
+  <div class="col s8">
+    <div class="col s12"> <p class="cart-title"><%= line_item.product.title %></p></div> 
+    <div class="valign-wrapper col s12">
+      <%= link_to decrease_line_item_path(line_item), method: :put, remote: true, class: 'btn green darken-4 waves-effect col s4' do %>
+        <i class="material-icons">remove</i>
+       <% end %>
+      <div class="col s3 green-text"><%= line_item.quantity %></div>
+      <%= link_to increase_line_item_path(line_item), method: :put, remote: true, class: 'btn green darken-4 waves-effect col s4' do %>
+        <i class="material-icons">add</i>
+       <% end %>
+      </div>
 
-    
-    <div class="center col s12"><%= line_item.product.title %>
-    </div>
-    
-    </div>
-  <div class="col s12 m6"><%= line_item.quantity %> </div>
-  <div class="col s12 m6"><%= number_to_currency(line_item.price) %> </div>
-  <div class="col s12 m12"><%= number_to_currency(line_item.total_price) %> </div>
+    <div class="col s4 green-text"><p class="cart-title"><%= number_to_currency(line_item.total_price) %> </p></div>
+  </div>
 </div>
