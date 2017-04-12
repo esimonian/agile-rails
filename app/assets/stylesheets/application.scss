@@ -15,7 +15,7 @@
  */
 @import "materialize/components/color";
 $primary-color: color("green", "darken-4") !default;
-$secondary-color: color("yellow", "base") !default;
+$secondary-color: color("green", "base") !default;
 $link-color: color("green", "darken-4") !default;
 @import "materialize";
 
@@ -37,3 +37,16 @@ a:hover {
   line-height: 30px!important;
 }
 
+.cart-button {
+  height: 34px!important;
+  line-height: 34px!important;
+  font-size: 14px;
+}
+.cart-lower-button {
+  padding: 0 1rem!important;
+}
+
+.cart-button-wrapper {
+    display: flex;
+    justify-content: space-around;
+}

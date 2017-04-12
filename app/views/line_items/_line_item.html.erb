@@ -5,11 +5,11 @@
   <div class="col s8">
     <div class="col s12"> <p class="cart-title"><%= line_item.product.title %></p></div> 
     <div class="valign-wrapper col s12">
-      <%= link_to decrease_line_item_path(line_item), method: :put, remote: true, class: 'btn green darken-4 waves-effect col s4' do %>
+      <%= link_to decrease_line_item_path(line_item), method: :put, remote: true, class: 'cart-button btn green darken-4 waves-effect col s4' do %>
         <i class="material-icons">remove</i>
        <% end %>
       <div class="col s3 green-text"><%= line_item.quantity %></div>
-      <%= link_to increase_line_item_path(line_item), method: :put, remote: true, class: 'btn green darken-4 waves-effect col s4' do %>
+      <%= link_to increase_line_item_path(line_item), method: :put, remote: true, class: 'cart-button btn green darken-4 waves-effect col s4' do %>
         <i class="material-icons">add</i>
        <% end %>
       </div>

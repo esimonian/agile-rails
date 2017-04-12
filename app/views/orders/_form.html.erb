@@ -1,0 +1,39 @@
+<%= form_for(order) do |f| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="row">
+    <div class="field col s12 m6">
+      <%= f.label :name %>
+      <%= f.text_field :name, size: 40 %>
+    </div>
+
+   <div class="field col s12 m6">
+      <%= f.label :email %>
+      <%= f.text_field :email, size: 40 %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="field col s12 m6">
+      <%= f.label :address %>
+      <%= f.text_area :address, rows: 3, cols: 4 %>
+    </div>
+
+    <div class="field input-field col s12 m6">
+        <%= f.select :pay_type, Order.pay_types.keys%>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Place Order', class: 'cart-button btn green darken-4 waves-effect'%>
+  </div>
+<% end %>

@@ -20,7 +20,12 @@
     </div>
   </div>
 
-<div class="center">
+<div class="center cart-button-wrapper">
+<div>
+<%= button_to 'Checkout', new_order_path, method: :get, class: 'cart-lower-button cart-button waves-effect waves-light btn green darken-4 center'%>
+</div>
+<div>
+  <%= button_to 'Empty Cart', cart, method: :delete, class: 'cart-lower-button cart-button waves-effect waves-light btn green darken-4 center',data:{confirm: 'Are you sure?'} %>
+</div>
 
-<%= button_to 'Empty Cart', cart, method: :delete, class: 'waves-effect waves-light btn green darken-4 center',data:{confirm: 'Are you sure?'} %>
 </div>
