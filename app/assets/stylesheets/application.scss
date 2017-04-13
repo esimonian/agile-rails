@@ -23,6 +23,13 @@ $link-color: color("green", "darken-4") !default;
 nav a, {
   color: white;
 }
+
+@media only screen and (min-width: 1200px) {
+  .nav-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;

@@ -1,6 +1,7 @@
-$(​'#notice'​).hide();
+
 $('#cart').html("<%=j render(@cart) %>")
 
 Materialize.toast('Added to cart!', 4000)
 
 $('#cart-counter').html("(<%=@cart.total_items  %>)")
+$('p#notice').hide()

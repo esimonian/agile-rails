@@ -9,13 +9,13 @@
   <div class="col m2">Total</div>
 </div>
 -->
- <%= render(cart.line_items) %>
 
+ <%= render partial: 'line_items/line_item', :collection => cart.line_items %>
   <div class="row">
-    <div class="col m2 push-m8">
+    <div class="col s6 green-text">
       Subtotal:
     </div>
-    <div class="col m2 push-m8">
+    <div class="col s6 green-text">
       <%= number_to_currency(cart.total_price) %>
     </div>
   </div>
